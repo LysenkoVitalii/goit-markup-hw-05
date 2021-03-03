@@ -24,7 +24,7 @@ p {
 
 :hover, 
 :focus {
-  transition: color 250ms var(--cubic);
+  transition: color, background-color, shadow 250ms var(--cubic);
 }
 
 .container {
@@ -112,6 +112,7 @@ p {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms var(--cubic);
 }
 
 .link-nav.current::after {
@@ -173,6 +174,7 @@ p {
   color: var(--cord-color);
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms var(--cubic);
 
 }
 
@@ -212,6 +214,7 @@ p {
 }
 
 .hero-title {
+  font-weight: 900;
   margin-bottom: 30px;
 
   color: var(--color-text);
@@ -233,6 +236,7 @@ p {
   line-height: 1.8;
   font-style: normal;
   text-align: center;
+  transition: color 250ms var(--cubic);
 }
 
 
@@ -306,34 +310,6 @@ p {
   letter-spacing: 0.03em;
   text-align: left;
 }
- 
-/* .list-feature::before {
-  content: "";
-  display: block;
-  margin-bottom: 30px;
-  height: 120px;
-  width: 270px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--background-icon);
-  padding: 25px 0;
-}
-
-.list-feature:nth-child(1)::before {
-  background-image: url("../img/antenna\ 1.svg");
-}
-
-.list-feature:nth-child(2)::before {
-  background-image: url("../img/clock\ 1.svg");
-}
-
-.list-feature:nth-child(3)::before {
-  background-image: url("../img/diagram\ 1.svg");
-}
-
-.list-feature:nth-child(4)::before {
-  background-image: url("../img/astronaut\ 1.svg");
-} */
 
 .team-card {
   background-color: var(--color-text);
@@ -469,6 +445,7 @@ p {
   justify-content: center;
   border-radius: 50%;
   color: var(--icon-social);
+  transition: background-color 250ms var(--cubic);
 
 }
 
@@ -655,9 +632,10 @@ p {
   background-color: var(--color-text-op);
 }
 
-/* .link .icon-social {
-  fill: var(--color-text);
-} */
+.link.social {
+  color: var(--color-text);
+}
+
 
 /* Проэкты портфолио */
 /* Кнопки */
@@ -681,12 +659,12 @@ p {
 }
 
 .button-button {
-  display: inline-block;
   padding: 6px 21px;
 
   border-radius: 4px;
   text-align: center;
   border: 1px solid transparent;
+  font-weight: 500;
 }
 
 .button-button:hover,
@@ -695,6 +673,7 @@ p {
   color: var(--color-text);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: color 250ms var(--cubic);
 }
 
 .pointer {
@@ -777,16 +756,13 @@ p {
   cursor: pointer;
 }
 
-.card:hover,
-.card:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
 
-.card:hover .overlay-card, 
-.card:focus .overlay-card {
+.card:hover .overlay-card {
   opacity: 1;
   transform: translateY(0);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:nth-child(3n) {
@@ -797,17 +773,27 @@ p {
   margin-bottom: 0;
 }
 
+.portfolio-list-item {
+  display: block;
+}
+
+.portfolio-list-item:hover, .overlay-card
+.portfolio-list-item:focus .overlay-card {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .card-trumb {
   position: relative;
   overflow: hidden;
 }
 
 
-.card-trumb:hover .overlay-card,
-.card-trumb:focus .overlay-card  {
+.card-trumb:hover .overlay-card {
   opacity: 1;
   background-color: rgba(33,150,243,0.9);
   transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .overlay-card {
@@ -819,9 +805,6 @@ p {
   height: 100%;
   background-color: rgba(33,150,243,0.9);
   transform: translateY(100%);
-
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .overlay-text {
@@ -831,6 +814,7 @@ p {
   letter-spacing: 0.03em;
   color: var(--color-text);
   padding: 63px 24px;
+  transition: color 250ms var(--cubic);
 }
 
 .card-title-project {
@@ -843,6 +827,7 @@ p {
 
 .card-title-project:hover .overlay-text {
   transform: translateY(0);
+  transition: color 250ms var(--cubic);
 }
 
 .card-title {
